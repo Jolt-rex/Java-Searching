@@ -1,10 +1,10 @@
 public class Main {
     public static void main(String[] args) {
-        int[] items = { 9, 4, 5, 2, 5, 1, 0 };
+        int[] items = { 1, 2, 3, 4, 5, 6, 7, 8 };
 
         System.out.println("Start search");
 
         var searcher = new Search();
-        System.out.println(searcher.linearSearch(items, 0));
+        System.out.println(searcher.binarySearchRecursion(items, 8));
     }
 }
