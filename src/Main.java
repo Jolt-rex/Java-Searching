@@ -5,6 +5,6 @@ public class Main {
         System.out.println("Start search");
 
         var searcher = new Search();
-        System.out.println(searcher.binarySearchRecursion(items, 8));
+        System.out.println(searcher.binarySearchIterative(items, 9));
     }
 }
