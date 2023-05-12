@@ -93,4 +93,16 @@ public class Search {
 
         return -1;
     }
+
+    public int exponentialSearch(int[] items, int target) {
+        int bound = 2;
+
+        while(bound < items.length && target > items[bound]) {
+            bound *= 2;
+            if(bound > items.length)
+                bound = items.length - 1;
+        }
+
+        return binarySearchRecursion(items, target, bound / 2, bound);
+    }
 }
