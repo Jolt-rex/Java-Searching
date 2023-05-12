@@ -1,3 +1,5 @@
+import static java.lang.Math.sqrt;
+
 public class Search {
 
     public int linearSearch(int[] items, int target) {
@@ -67,6 +69,27 @@ public class Search {
 
         if(target > items[mid2] && target <= items[right])
             return ternarySearch(items, target, mid2 + 1, right);
+
+        return -1;
+    }
+
+    public int jumpSearch(int[] items, int target) {
+        int jumpSize = (int)sqrt(items.length);
+        int start = 0;
+        int next = start + jumpSize;
+
+        while(start < items.length && items[next - 1] < target) {
+            start = next;
+            next += jumpSize;
+
+            if(next > items.length)
+                next = items.length;
+        }
+
+        // if target is in this block, use linear search to find it
+        for (int i = 0; i < next; i++)
+            if (target == items[i])
+                return i;
 
         return -1;
     }
